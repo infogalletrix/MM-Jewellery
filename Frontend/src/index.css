@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f5edcc;
+  --color-gold-200: #ecda9b;
+  --color-gold-300: #dfc264;
+  --color-gold-400: #a27b38; /* Exact Gold from log.png */
+  --color-gold-500: #b89329;
+  --color-gold-600: #99751e;
+  --color-gold-700: #7a5818;
+  --color-gold-800: #5c4113;
+  --color-gold-900: #402c0c;
+  --color-gold-950: #261805;
+  --color-obsidian: #0f0f0f;
+  --color-darkgray: #1a1a1a;
+}
+
+/* Custom global styles or scrollbars if needed */
+html, body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
