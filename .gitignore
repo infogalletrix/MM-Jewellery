@@ -1,0 +1,18 @@
+# .NET
+**/bin/
+**/obj/
+
+# Node
+**/node_modules/
+Frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
