@@ -61,7 +61,7 @@ namespace Backend.Controllers
             var productImages = await _context.ProductImages.ToListAsync();
 
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = products.Select(p => {
                 var linkedImages = productImages.Where(pi => pi.ProductId == p.Id).Select(pi => pi.ImageId).ToList();
@@ -107,7 +107,7 @@ namespace Backend.Controllers
                 .ToListAsync();
 
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = new ProductResponse
             {

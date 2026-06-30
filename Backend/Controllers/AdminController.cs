@@ -153,7 +153,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetImages()
         {
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var images = await _context.AdminImages
                 .OrderByDescending(img => img.UploadedAt)

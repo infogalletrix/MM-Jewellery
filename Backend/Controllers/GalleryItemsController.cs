@@ -35,7 +35,7 @@ namespace Backend.Controllers
         {
             var items = await _context.GalleryItems.ToListAsync();
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = items.Select(i => new GalleryItemResponse
             {
@@ -56,7 +56,7 @@ namespace Backend.Controllers
             if (item == null) return NotFound(new { message = "Gallery item not found." });
 
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = new GalleryItemResponse
             {

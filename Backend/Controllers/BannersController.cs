@@ -32,7 +32,7 @@ namespace Backend.Controllers
         {
             var banners = await _context.Banners.OrderByDescending(b => b.CreatedAt).ToListAsync();
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = banners.Select(b => new BannerResponse
             {
@@ -55,7 +55,7 @@ namespace Backend.Controllers
             if (banner == null) return NotFound(new { message = "Banner not found." });
 
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             var response = new BannerResponse
             {

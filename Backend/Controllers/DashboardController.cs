@@ -45,7 +45,7 @@ namespace Backend.Controllers
             var productImages = await _context.ProductImages.ToListAsync();
 
             var request = HttpContext.Request;
-            var baseUrl = $"{request.Scheme}://{request.Host}";
+            var baseUrl = "https://mm.galletrix.com";
 
             // 1. Featured Products
             var featuredProductsRaw = await _context.Products
