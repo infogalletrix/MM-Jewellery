@@ -11,8 +11,7 @@ export default function Gallery() {
   useEffect(() => {
     const fetchGalleryData = async () => {
       try {
-        const apiHost = window.location.hostname;
-        const res = await fetch(`http://${apiHost}:5005/api/galleryitems`);
+        const res = await fetch(`/api/galleryitems`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.length > 0) {

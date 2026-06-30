@@ -101,9 +101,8 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const apiHost = window.location.hostname;
       const formattedPhone = phone ? `${selectedCountry.code} ${phone}` : '';
-      const response = await fetch(`http://${apiHost}:5005/api/inquiries`, {
+      const response = await fetch(`/api/inquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ customerName, email, phone: formattedPhone, message }),

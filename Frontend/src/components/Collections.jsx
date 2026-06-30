@@ -5,8 +5,7 @@ import Nav from './Nav';
 // Import assets
 import c1Img from '../assets/0.png';
 
-const apiHost = window.location.hostname;
-const BACKEND_URL = `http://${apiHost}:5005`;
+const BACKEND_URL = "";
 
 export default function Collections() {
   const [collections, setCollections] = useState([]);

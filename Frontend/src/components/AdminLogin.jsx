@@ -24,8 +24,7 @@ export default function AdminLogin({ onLoginSuccess }) {
     setIsLoading(true);
 
     try {
-      const apiHost = window.location.hostname;
-      const response = await fetch(`http://${apiHost}:5005/api/admin/login`, {
+      const response = await fetch(`/api/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,8 +62,7 @@ export default function AdminLogin({ onLoginSuccess }) {
     setIsLoading(true);
 
     try {
-      const apiHost = window.location.hostname;
-      const response = await fetch(`http://${apiHost}:5005/api/admin/forgot-password`, {
+      const response = await fetch(`/api/admin/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,8 +104,7 @@ export default function AdminLogin({ onLoginSuccess }) {
     setIsLoading(true);
 
     try {
-      const apiHost = window.location.hostname;
-      const response = await fetch(`http://${apiHost}:5005/api/admin/reset-password`, {
+      const response = await fetch(`/api/admin/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

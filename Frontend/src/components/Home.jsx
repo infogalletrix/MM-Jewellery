@@ -11,11 +11,11 @@ export default function Home() {
   const [showAllNewArrivals, setShowAllNewArrivals] = useState(false);
 
   useEffect(() => {
-    const apiHost = window.location.hostname;
+
 
     const fetchProducts = async () => {
       try {
-        const res = await fetch(`http://${apiHost}:5005/api/products`);
+        const res = await fetch(`/api/products`);
         if (res.ok) {
           const data = await res.json();
           if (data) {
@@ -29,7 +29,7 @@ export default function Home() {
                 category: p.categoryName,
                 price: sellingPrice,
                 originalPrice: originalPrice,
-                image: p.imageIds && p.imageIds.length > 0 ? `http://${apiHost}:5005/api/admin/images/${p.imageIds[0]}` : null,
+                image: p.imageIds && p.imageIds.length > 0 ? `/api/admin/images/${p.imageIds[0]}` : null,
                 badgeLeft: p.customBadge || "",
                 badgeRight: discPercent > 0 ? `${discPercent}% OFF` : "",
                 collection: p.collectionName || "",
@@ -47,7 +47,7 @@ export default function Home() {
 
     const fetchCollections = async () => {
       try {
-        const res = await fetch(`http://${apiHost}:5005/api/collections`);
+        const res = await fetch(`/api/collections`);
         if (res.ok) {
           const data = await res.json();
           if (data) {
@@ -55,7 +55,7 @@ export default function Home() {
               id: c.id,
               title: c.name,
               description: c.description || 'No description provided.',
-              image: c.imageId ? `http://${apiHost}:5005/api/admin/images/${c.imageId}` : null,
+              image: c.imageId ? `/api/admin/images/${c.imageId}` : null,
               badge: c.badge || ''
             }));
             setCollections(mapped);
@@ -68,7 +68,7 @@ export default function Home() {
 
     const fetchBanners = async () => {
       try {
-        const res = await fetch(`http://${apiHost}:5005/api/banners`);
+        const res = await fetch(`/api/banners`);
         if (res.ok) {
           const data = await res.json();
           if (data) {

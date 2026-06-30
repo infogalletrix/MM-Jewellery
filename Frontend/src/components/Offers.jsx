@@ -47,8 +47,8 @@ export default function Offers() {
   useEffect(() => {
     const fetchOffersAndProducts = async () => {
       try {
-        const apiHost = window.location.hostname;
-        const productsRes = await fetch(`http://${apiHost}:5005/api/products`);
+
+        const productsRes = await fetch(`/api/products`);
         let liveProducts = [];
         if (productsRes.ok) {
           const productsData = await productsRes.json();
@@ -58,7 +58,7 @@ export default function Offers() {
           }));
         }
 
-        const res = await fetch(`http://${apiHost}:5005/api/offers`);
+        const res = await fetch(`/api/offers`);
         if (res.ok) {
           const data = await res.json();
           if (data) {

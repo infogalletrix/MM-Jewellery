@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import logImg from '../assets/log.png';
 
-const apiHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-const BACKEND_URL = `http://${apiHost}:5005`;
+const BACKEND_URL = "";
 
 export default function AdminDashboard({ onLogout }) {
   const [activeTab, setActiveTab] = useState('overview');
